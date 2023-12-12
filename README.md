@@ -1,5 +1,5 @@
 # cex
-The 7-page NFT marketplace is a modern and innovative project. Built using the BEM methodology, it incorporates JavaScript for dynamism, SCSS, and mixins for styling. Fully responsive, it ensures convenience across all devices. Uniquely, it features fluid responsiveness, adapting seamlessly to various screen sizes. Providing a contemporary and user-friendly space, it facilitates the buying and selling of NFTs.
+A landing page featuring cryptocurrency market analysis is my project, embodying unique design and dynamic animations. Full adaptability ensures usability on any device. I invite you to appreciate frontend development in the world of cryptocurrency trends!
 # Stack of technologies used:
 - BEM
 - JavaScipt
