@@ -8,4 +8,4 @@ The 7-page NFT marketplace is a modern and innovative project. Built using the B
 - Responsive adaptive
 - Swiper.js
 # Preview:
-[NFT-maketplace](https://nft-maketplace-lundoger.netlify.app/)
+[Cex](https://cex-lundoger.netlify.app/)
