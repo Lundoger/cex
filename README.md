@@ -6,6 +6,6 @@ A landing page featuring cryptocurrency market analysis is my project, embodying
 - Scss & Scss mixins
 - GULP & WEBPACK
 - Responsive adaptive
-- Swiper.js
+- Сss Animation
 # Preview:
 [Cex](https://cex-lundoger.netlify.app/)
