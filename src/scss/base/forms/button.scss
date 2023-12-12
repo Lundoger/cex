@@ -1,0 +1,37 @@
+//<BUTTONS (a.btn+tab)>
+// Сніппет (HTML): btn
+
+.button {
+	display: inline-flex;
+	justify-content: center;
+	border-radius: rem(6);
+	padding: rem(12) rem(60);
+	background: linear-gradient(92.56deg, #10A399 -81.74%, #32D3C9 100%);
+	font-weight: 700;
+	color: #fff;
+	line-height: math.div(25, 18);
+	transition: all 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0 0 20px #20817b9d;
+		}
+	}
+	&--border {
+		padding: rem(10) rem(20);
+		border: rem(1.5) solid $cyanColor;
+		color: $cyanColor;
+		background: transparent;
+		font-weight: 400;
+		font-size: rem(14);
+		transition: all 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				background: $cyanColor;
+				color: #fff;
+			}
+		}
+	}
+	&._fw {
+		width: 100%;
+	}
+}

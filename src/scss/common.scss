@@ -1,0 +1,248 @@
+// Заголовки, загальні БЕМ блоки та інше...
+.social {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: rem(18);
+	&__link {
+		width: rem(48);
+		height: rem(48);
+		border-radius: 50%;
+		border: rem(1.5) solid $cyanColor;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: background-color 0.3s ease 0s;
+		svg {
+			width: rem(24);
+			height: rem(24);
+			object-fit: cover;
+			path {
+				transition: fill 0.3s ease 0s;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $cyanColor;
+				svg path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
+
+.title {
+	font-weight: 700;
+	@include adaptiveValue("font-size", 32, 22);
+	line-height: math.div(44, 32);
+	color: #333333;
+	span {
+		color: $cyanColor;
+	}
+}
+
+//=========KEYFRAMES===============================================================================================================================================
+@keyframes bounceInUp {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	from {
+		opacity: 0;
+		transform: translate3d(0, 1500px, 0) scaleY(5);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(0, -20px, 0) scaleY(0.9);
+	}
+	75% {
+		opacity: 1;
+		transform: translate3d(0, 10px, 0) scaleY(0.95);
+	}
+	90% {
+		opacity: 1;
+		transform: translate3d(0, -5px, 0) scaleY(0.985);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes bounceInLeft {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		transform: translate3d(-3000px, 0, 0) scaleX(3);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(25px, 0, 0) scaleX(1);
+	}
+	75% {
+		opacity: 1;
+		transform: translate3d(-10px, 0, 0) scaleX(0.98);
+	}
+	90% {
+		opacity: 1;
+		transform: translate3d(5px, 0, 0) scaleX(0.995);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes bounceInDown {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		transform: translate3d(0, -3000px, 0) scaleY(3) rotate(15deg);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(0, 25px, 0) scaleY(0.9) rotate(15deg);
+	}
+	75% {
+		opacity: 1;
+		transform: translate3d(0, -10px, 0) scaleY(0.95) rotate(15deg);
+	}
+	90% {
+		opacity: 1;
+		transform: translate3d(0, 5px, 0) scaleY(0.985) rotate(15deg);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0) rotate(15deg);
+	}
+}
+@keyframes bounceInRight {
+	from,
+	60%,
+	75%,
+	90%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	from {
+		opacity: 0;
+		transform: translate3d(3000px, 0, 0) scaleX(3);
+	}
+	60% {
+		opacity: 1;
+		transform: translate3d(-25px, 0, 0) scaleX(1);
+	}
+	75% {
+		opacity: 1;
+		transform: translate3d(10px, 0, 0) scaleX(0.98);
+	}
+	90% {
+		opacity: 1;
+		transform: translate3d(-5px, 0, 0) scaleX(0.995);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+@keyframes bounceIn {
+	from,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+	40% {
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		opacity: 1;
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	80% {
+		opacity: 1;
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		opacity: 1;
+		transform: scale3d(1, 1, 1);
+	}
+}
+//---------------------------------------
+@keyframes lightSpeedInLeft {
+	from {
+		transform: translate3d(-100%, 0, 0) skewX(30deg);
+		opacity: 0;
+	}
+	60% {
+		transform: skewX(-20deg);
+		opacity: 1;
+	}
+	80% {
+		transform: skewX(5deg);
+		opacity: 1;
+	}
+	to {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+@keyframes lightSpeedInRight {
+	from {
+		transform: translate3d(100%, 0, 0) skewX(-30deg);
+		opacity: 0;
+	}
+	60% {
+		transform: skewX(20deg);
+		opacity: 1;
+	}
+	80% {
+		opacity: 1;
+		transform: skewX(-5deg);
+	}
+	to {
+		opacity: 1;
+		transform: translate3d(0, 0, 0);
+	}
+}
+//---------------------------------------
+@keyframes jackInTheBox {
+	from {
+		opacity: 0;
+		transform: scale(0.1) rotate(30deg);
+		transform-origin: center bottom;
+	}
+	50% {
+		transform: rotate(-10deg);
+	}
+	70% {
+		transform: rotate(3deg);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}

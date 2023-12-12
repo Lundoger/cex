@@ -1,0 +1,126 @@
+// <SELECT>
+// Сніппет (HTML): sel
+.select {
+	position: relative;
+	// .select__body
+	&__body {
+		position: relative;
+	}
+	// .select__title
+	&__title {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: rem(6);
+		&:after {
+			content: "";
+			width: 0;
+			height: 0;
+			border-left: 3px solid transparent;
+			border-right: 3px solid transparent;
+			border-top: 6px solid $mainColor;
+			transition: transform 0.3s ease 0s;
+			._select-open & {
+				transform: rotate(180deg);
+			}
+		}
+	}
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		gap: rem(5);
+		&:after {
+			content: "";
+			flex: 0 0 rem(22);
+			width: rem(22);
+			height: rem(22);
+			background: url('@img/icons/globe.svg') center / 100% 100% no-repeat;
+		}
+		&._select-pseudo-label {
+			&::before {
+				content: attr(data-pseudo-label);
+				opacity: 0.5;
+			}
+		}
+	}
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+	}
+	// .select__options
+	&__options {
+		position: absolute;
+		top: rem(30);
+		border-radius: 0 0 4px 4px;
+		min-width: 100%;
+		left: 0;
+		background-color: #fff;
+		border: 1px solid #d9d9d9;
+		padding: 10px 0 5px 0;
+	}
+	// .select__scroll
+	&__scroll {
+		overflow-y: auto;
+		overflow-x: hidden;
+		// Максимальна висота
+		max-height: 200px;
+		// Стилі скроллбару
+		.simplebar-scrollbar {
+			&::before {
+				//opacity: 1;
+			}
+		}
+	}
+	// .select__option
+	&__option {
+		width: 100%;
+		text-align: left;
+		cursor: pointer;
+		padding: 5px 5px;
+		color: inherit;
+		&._select-selected {
+			background-color: #eee;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #d9d9d9;
+			}
+		}
+	}
+
+	// Конструкція додаткових даних
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+	&__asset {
+	}
+	&__text {
+	}
+
+	// Стан селекту
+	&._select-open {
+		z-index: 5;
+	}
+	&._select-disabled {
+	}
+	&._select-active {
+	}
+	&._select-focus {
+	}
+	&._select-multiple {
+	}
+	&._select-checkbox {
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}

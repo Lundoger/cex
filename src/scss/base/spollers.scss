@@ -1,0 +1,101 @@
+.spollers {
+	display: grid;
+	gap: 15px;
+	&__item {
+	}
+
+	&__title {
+		width: 100%;
+		cursor: default;
+		text-align: left;
+		position: relative;
+		font-weight: 600;
+		font-size: rem(16);
+		line-height: 1.6;
+		&:not(:last-child) {
+			margin-bottom: rem(20);
+		}
+		._spoller-init & {
+			cursor: pointer;
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				background-color: #fff;
+				height: 2px;
+				width: 15px;
+				transition: transform 0.5s ease 0s;
+			}
+			&::before {
+				transform: translate(-75%, -50%) rotate(40deg);
+			}
+			&::after {
+				transform: translate(0, -50%) rotate(-40deg);
+			}
+			&._spoller-active {
+				&::before {
+					transform: translateX(-75%) rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+			/*
+			._spoller-init & {
+				position: relative;
+				width: 100%;
+				text-align: left;
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					top: rem(12);
+					height: rem(1);
+					transition: all 0.3s ease 0s;
+					width: rem(10);
+					background-color: #000;
+				}
+				&::before {
+					transform: rotate(40deg);
+					right: rem(7);
+				}
+				&::after {
+					transform: rotate(-40deg);
+				}
+			}
+			&._spoller-active {
+				&::before {
+					transform: rotate(-40deg);
+				}
+				&::after {
+					transform: rotate(40deg);
+				}
+			}
+			*/
+		}
+	}
+
+	&__body {
+		&>*:not(:last-child) {
+			margin-bottom: rem(15);
+		}
+	}
+	&__li {
+	}
+
+	&__link {
+		color: #D1D1D1;
+		font-size: rem(14);
+		line-height: math.div(19, 14);
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: $cyanColor;
+				text-decoration: underline;
+			}
+		}
+	}
+}
